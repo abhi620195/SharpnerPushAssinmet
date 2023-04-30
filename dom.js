@@ -42,10 +42,24 @@
 
 //QUERYSELECTOR //
 
-var second_item = document.querySelector('.list-group-item:nth-child(2)');
+// var second_item = document.querySelector('.list-group-item:nth-child(2)');
 
-second_item.style.backgroundColor = "green"
+// second_item.style.backgroundColor = "green"
 
-var third_item = document.querySelector('.list-group-item:nth-child(3)');
+// var third_item = document.querySelector('.list-group-item:nth-child(3)');
 
-third_item.remove()
+// third_item.remove()
+
+//QUERYSELECTORALL //
+
+var odd = document.querySelectorAll('li:nth-child(odd)')
+
+
+for(var i = 0;i<odd.length;i++)
+{
+    odd[i].style.backgroundColor = "green"
+}
+
+var second_item = document.querySelectorAll('li:nth-child(even)')
+second_item[0].style.fontWeight = "bold"
+second_item[0].style.color = "green"
