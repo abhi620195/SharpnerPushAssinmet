@@ -50,6 +50,7 @@
 
 // third_item.remove()
 
+
 //QUERYSELECTORALL //
 
 var odd = document.querySelectorAll('li:nth-child(odd)')
