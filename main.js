@@ -1,16 +1,21 @@
 function saveToLocalstorage(event)
 {
     event.preventDefault();
-    let myObj = {
-        name: event.target.name.value,
-        email: event.target.email.value
+    const name = event.target.name.value;
+    const email = event.target.email.value;
+    let myObj = 
+    {
+        name,
+        email
     }
     
-    let myObj_serialized = JSON.stringify(myObj)
+    localStorage.setItem(myObj.email,JSON.stringify(myObj));
+    showUserOnScreen(myObj)
+    // console.log(myObj_deserialized)
+}
 
-    localStorage.setItem('myObj',myObj_serialized);
-
-    let myObj_deserialized = JSON.parse(localStorage.getItem('myObj'))
-    
-    console.log(myObj_deserialized)
+function showUserOnScreen(myObj)
+{
+    const parentElem = document.getElementById('listOfitems')
+    parentElem.innerHTML = `${myObj.name} - ${myObj.email}`
 }
