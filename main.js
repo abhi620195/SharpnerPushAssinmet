@@ -17,5 +17,17 @@ function saveToLocalstorage(event)
 function showUserOnScreen(myObj)
 {
     const parentElem = document.getElementById('listOfitems')
-    parentElem.innerHTML = `${myObj.name} - ${myObj.email}`
+    parentElem.innerHTML = parentElem.innerHTML+`<li>${myObj.name} - ${myObj.email}</li>`
+
+    const deleteButton = document.createElement('input')
+    deleteButton.type = "button"
+    deleteButton.value = 'Delete'
+    deleteButton.onclick = () =>
+    {
+        localStorage.removeItem(obj.email)
+        parentElem.remove(childElem)
+    }
+    childElem.appendChild(deleteButton)
+    parentElem.appendChild(childElem)
+
 }
